@@ -23,7 +23,7 @@ export default function App() {
                 {
                     courseGoals.map((goal) => {
                         return (
-                            <Text>{goal}</Text>
+                            <Text key={Math.random()}>{goal}</Text>
                         )
                     })
                 }
