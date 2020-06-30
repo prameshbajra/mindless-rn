@@ -12,10 +12,14 @@ export default function App() {
         }
     }
 
+    const deleteGoal = (index) => {
+        setCourseGoals(currentGoals => currentGoals.filter((goal, i) => i !== index));
+    }
+
     return (
         <View style={styles.screen}>
             <GoalInput onAddGoal={addGoalHandler} />
-            <GoalItems items={courseGoals} />
+            <GoalItems items={courseGoals} onDelete={deleteGoal} />
         </View>
     );
 }

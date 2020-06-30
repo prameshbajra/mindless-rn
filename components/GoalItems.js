@@ -1,13 +1,15 @@
 import React from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 
 export default function GoalItems(props) {
     return (
         <FlatList data={props.items} style={styles.list} renderItem={itemData => (
-            <View style={styles.listItem}>
-                <Text>{itemData.index + 1}. {itemData.item.value}</Text>
-            </View>
+            <TouchableOpacity onPress={() => props.onDelete(itemData.index)}>
+                <View style={styles.listItem}>
+                    <Text>{itemData.index + 1}. {itemData.item.value}</Text>
+                </View>
+            </TouchableOpacity>
         )} />
     )
 }
