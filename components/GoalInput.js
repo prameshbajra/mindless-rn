@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, StyleSheet, TextInput, View } from 'react-native';
+import { TouchableOpacity, StyleSheet, TextInput, View, Text } from 'react-native';
 
 
 export default function GoalInput(props) {
@@ -9,32 +9,37 @@ export default function GoalInput(props) {
         setEnteredGoal(enteredGoal);
     }
 
+    const addOnPressHandler = () => {
+        props.onAddGoal(enteredGoal);
+        setEnteredGoal('');
+    }
+
     return (
         <View style={styles.inputContainer}>
             <TextInput placeholder="Enter something ..." style={styles.input} onChangeText={goalInputHandler} value={enteredGoal} />
-            <View style={styles.button}>
-                <Button title="Add" onPress={() => props.onAddGoal(enteredGoal)} />
-            </View>
+            <TouchableOpacity onPress={addOnPressHandler}>
+                <View style={styles.button}>
+                    <Text style={{ color: 'blue' }}>Add</Text>
+                </View>
+            </TouchableOpacity>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    inputContainer: {
-        alignItems: 'center',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-    },
     button: {
+        alignItems: 'center',
+        borderColor: 'blue',
+        borderWidth: 1,
         borderRadius: 50,
-        padding: 5,
-        flex: 2
+        justifyContent: 'center',
+        marginVertical: 20,
+        padding: 10,
     },
     input: {
         borderColor: 'black',
         borderWidth: 2,
         borderRadius: 50,
-        flex: 5,
         padding: 5,
         paddingHorizontal: 20
     }
