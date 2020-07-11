@@ -1,11 +1,10 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import Header from './components/Header';
+import { View, StyleSheet } from 'react-native';
 
-export default function App() {
+const StartGameScreen = () => {
     return (
         <View style={styles.screen}>
-            <Header title="Guess the number" />
+
         </View>
     )
 }
@@ -15,3 +14,6 @@ const styles = StyleSheet.create({
         flex: 1
     }
 });
+
+
+export default StartGameScreen;

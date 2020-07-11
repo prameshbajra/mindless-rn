@@ -1,10 +1,9 @@
-import { React } from 'react';
+import React from 'react';
 import {
     StyleSheet,
+    Text,
     View
 } from 'react-native';
-
-
 
 const Header = (props) => {
     return (
@@ -14,7 +13,6 @@ const Header = (props) => {
     )
 }
 
-
 const styles = StyleSheet.create({
     header: {
         alignItems: 'center',
@@ -23,12 +21,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingTop: 30,
         width: '100%',
-    }, headerTitle: {
-        color: 'black',
+    },
+    headerTitle: {
+        color: 'white',
         fontSize: 18
     }
 });
-
 
 export default Header;
 
